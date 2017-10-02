@@ -37,7 +37,7 @@ namespace AdventureWorksAPI.Controllers
         /// <param name="name">Name</param>
         /// <returns>List response</returns>
         [HttpGet]
-        [Route("Product")]
+        [Route(nameof(Product))]
         public async Task<IActionResult> GetProducts(Int32? pageSize = 10, Int32? pageNumber = 1, String name = null)
         {
             var response = new ListModelResponse<ProductViewModel>() as IListModelResponse<ProductViewModel>;
@@ -97,7 +97,7 @@ namespace AdventureWorksAPI.Controllers
         /// <param name="value">Product entry</param>
         /// <returns>Single response</returns>
         [HttpPost]
-        [Route("Product")]
+        [Route(nameof(Product))]
         public async Task<IActionResult> CreateProduct([FromBody]ProductViewModel value)
         {
             var response = new SingleModelResponse<ProductViewModel>() as ISingleModelResponse<ProductViewModel>;
@@ -125,7 +125,7 @@ namespace AdventureWorksAPI.Controllers
         /// <param name="value">Product entry</param>
         /// <returns>Single response</returns>
         [HttpPut]
-        [Route("Product")]
+        [Route(nameof(Product))]
         public async Task<IActionResult> UpdateProduct([FromBody]ProductViewModel value)
         {
             var response = new SingleModelResponse<ProductViewModel>() as ISingleModelResponse<ProductViewModel>;
